@@ -87,4 +87,27 @@ class Foo {
         // :: error: divide.by.zero
         int k = 1/z;
     }
+
+    public static void plusTransferTest(int x, int y) {
+        int m2pm2 = 1 / ((-2) + (-2));
+        int m2pm1 = 1 / ((-2) + (-1));
+        int m2pm0 = 1 / ((-2) + 0);
+        int m2p1 = 1 / ((-2) + 1);
+        // :: error: divide.by.zero
+        int m2p2 = 1 / ((-2) + 2);
+        if (x < 0) {
+            int m2plt = 1 / ((-2) + x);
+        }
+        if (x <= 0) {
+            int m2ple = 1 / ((-2) + x);
+        }
+        if (x > 0) {
+            // :: error: divide.by.zero
+            int m2pgt = 1 / ((-2) + x);
+        }
+        if (x >= 0) {
+            // :: error: divide.by.zero
+            int m2pgt = 1 / ((-2) + x);
+        }
+    }
 }
